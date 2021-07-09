@@ -1,0 +1,419 @@
+﻿/* stylesheet for practice website */
+
+/*main styles */
+body {
+	position: relative;
+	min-height: 1100px;
+	margin: 0px;
+	font-family: 'Lato', sans-serif;
+	color: white;
+	opacity: 1.00;
+	background-attachment: fixed;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-image: url("images/background.jpg");
+	background-size: cover;
+}
+.container {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: 'Lato', sans-serif;
+	color: white;
+	text-shadow: 0 0 3px darkgreen, 0 0 5px forestgreen;
+}
+
+p {
+	color: white;
+	text-shadow: 0 0 5px black;
+}
+
+a {
+	color: deepskyblue;
+}
+
+a:visited {
+	color: mediumpurple;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 12rem;
+	background-color: rgba(204, 204, 204, 0.8);
+	text-align: center;
+	overflow: hidden;
+}
+
+.footer-col1 {
+	text-align: center;
+	margin-left: 1vw;
+	margin-right: 1vw;
+	width: 35vw;
+	max-height: 180px;
+	float: left;
+	display: inline-block;
+}
+
+.footer-col1 img {
+	padding: 10px;
+	max-width: 50px;
+	height: auto;
+	vertical-align: middle;
+}
+
+.footer-col2 {
+	text-align: center;
+	margin-left: 1vw;
+	margin-right: 1vw;
+	width: 55vw;
+	max-height: 180px;
+	float: left;
+}
+
+/*nav styles*/
+.nav-wrapper {
+	display: flex;
+	justify-content: space-between;
+	padding: 25px;
+}
+
+.left-side {
+	display: flex;
+}
+
+.nav-wrapper > .left-side > div {
+	margin-right: 20px;
+	font-size: 1em;
+	text-transform: uppercase;
+}
+
+.nav-link-wrapper {
+	height: 22px;
+	border-bottom: 1px solid transparent;
+	transition: border-bottom 0.3s;
+}
+
+.nav-link-wrapper a {
+	color: lightgray;
+	text-decoration: none;
+	transition: color 0.3s;
+}
+
+.nav-link-wrapper:hover {
+	border-bottom: 1px solid white;
+}
+
+.nav-link-wrapper a:hover {
+	color: white;
+}
+
+.active-nav-link {
+	border-bottom: 1px solid white;
+}
+
+.active-nav-link a {
+	color: white !important;
+}
+
+/*background styles*/
+.bgimg {
+	padding-bottom: 12rem; /*to make room for footer*/
+}
+
+/*about page styles */
+.about-wrapper {
+	padding-bottom: 17px;
+}
+
+.profile-image-wrapper img {
+	float: left;
+	margin-left: 20px;
+	margin-right: 20px;
+	width: 35vw; /*Width always 35% viewport. auto height keeps aspect ratio*/
+	height: auto;
+	border: 3px solid forestgreen;
+}
+
+.profile-content-wrapper {
+	margin-right: 20px;
+	margin-left: 20px;
+	font-size: 20px;
+	font-family: Verdana, sans-serif;
+	text-align: justify;
+	border: 1px solid white;
+	background: rgba(204, 204, 204, 0.3);
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.profile-content-wrapper h1 {
+	color: white;
+}
+
+/*resume page styles*/
+.resume-download {
+	display: flex;
+	justify-content: center;
+	padding-left: 20px;
+}
+
+.resume-preview {
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+}
+
+/*conact page styles*/
+.contact-wrapper {
+	padding: 25px;
+	font-size: min(20px, 3vw);
+	color: white;
+}
+
+.contact-item-wrapper {
+	width: min(400px, 70vw);
+	height: 72px;
+	border: 1px solid white;
+	background: rgba(204, 204, 204, 0.3);
+	margin-bottom: 5px;
+}
+
+.contact-item-wrapper img {
+	padding: 10px;
+	max-width: 50px;
+	height: auto;
+	vertical-align: middle;
+}
+
+/*project page styles*/
+.projects-wrapper {
+	padding: 20px;
+	width: 97%;
+	height: auto;
+}
+
+/*projects - moonToMars*/
+.moonToMars-links {
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+}
+
+.moonToMars-code-repo {
+	display: flex;
+	justify-content: left;
+}
+
+.moonToMars-info-summary, .moonToMars-info-contributions, .moonToMars-info-overview, .moonToMars-info-team {
+	border: 1px solid white;
+	background: rgba(204, 204, 204, 0.3);
+	margin-bottom: 5px;
+	margin-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 18px;
+}
+
+a.button {
+	background-color: forestgreen;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	width: 20vw;
+	height: auto;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 18px;
+}
+
+.moonToMars-image-wrapper img {
+	display: flex;
+	justify-content: space-between;
+	display: inline-block;
+	width: 33%;
+	height: auto;
+}
+
+.moonToMars-info {
+	text-align: justify;
+}
+
+/*projects - SUMO bot*/
+.SUMOBot-links {
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+}
+
+.SUMOBot-first-col img {
+	width: 25%;
+	height: auto;
+	float: left;
+	padding: 1px;
+}
+
+.SUMOBot-sec-col img {
+	width: 50%;
+	height: auto;
+	float: left;
+	padding: 1px;
+}
+
+.SUMOBot-third-col img {
+	width: 24%;
+	height: auto;
+	padding: 1px;
+}
+
+.SUMOBot-info-summary, .SUMOBot-info-contributions, .SUMOBot-info-overview {
+	border: 1px solid white;
+	background: rgba(204, 204, 204, 0.3);
+	margin-bottom: 5px;
+	margin-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 18px;
+}
+
+.SUMOBot-info {
+	text-align: justify;
+}
+
+/*projects - AI*/
+.AI-wrapper {
+	font-size: 18px;
+}
+
+.collapsible {
+	background-color: darkgreen;
+	color: white;
+	cursor: pointer;
+	padding: 18px;
+	margin-top: 5px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 18px;
+}
+
+.active, .collapsible:hover {
+	background-color: forestgreen;
+}
+
+.collapsible:after {
+	content: '\002B';
+	color: white;
+	font-weight: bold;
+	float: left;
+	margin-left: 5px;
+	margin-right: 10px;
+}
+
+.active:after {
+	content: "\2212";
+}
+
+.collapsible-content {
+	padding: 0 18px;
+	display: none;
+	overflow: hidden;
+	background-color: #343334;
+}
+
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+}
+
+td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(odd) {
+	background-color: #343334;
+}
+
+tr:nth-child(even) {
+	background-color: dimgray;
+}
+
+.AI-info-summary {
+	border: 1px solid white;
+	background: rgba(204, 204, 204, 0.3);
+	margin-bottom: 5px;
+	margin-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+
+.systems-info-summary {
+	border: 1px solid white;
+	background: rgba(204, 204, 204, 0.3);
+	margin-bottom: 5px;
+	margin-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+
+/*home page styles*/
+.home-picture img {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	max-height: 900px;
+	width: auto;
+}
+
+.home-signature {
+	position: absolute;
+	top: 50px;
+	left: 0;
+	padding: 50px;
+	font-family: 'Lato', sans-serif;
+	color: white;
+	text-shadow: 0 0 3px darkgreen, 0 0 5px forestgreen;
+}
+
+.home-signature-name {
+	font-size: min(64px, 7.2vw);
+	padding: 10px;
+}
+
+.home-signature-school {
+	font-size: min(36px, 4vw);
+	padding: 10px;
+}
+
+.home-signature-skills {
+	font-size: min(24px, 2.7vw);
+	padding: 10px;
+}
+
+.home-projects-wrapper {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin-bottom: 12rem;
+	padding: 50px;
+}
+
+.project-banner {
+	font-size: 20px;
+	padding: 8px;
+}

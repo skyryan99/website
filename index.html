@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8" />
+	<title>SR | Home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="My personal website to show off">
+	<meta name="keywords" content="engineering, computer, cs, mechanical, mechatronics, robotics, ai, html, css, python, c, javascript">
+	<meta name="author" content="Schuyler Ryan">
+	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+	<div class="bgimg">
+		<div class="container">
+
+			<div class="nav-wrapper">
+
+				<div class="left-side">
+					<div class="nav-link-wrapper active-nav-link">
+						<a href="index.html">Home</a>
+					</div>
+					<div class="nav-link-wrapper">
+						<a href="about_me.html">About</a>
+					</div>
+					<div class="nav-link-wrapper">
+						<a href="resume_and_coursework.html">Resume</a>
+					</div>
+					<div class="nav-link-wrapper">
+						<a href="contact.html">Contact</a>
+					</div>
+					<div class="nav-link-wrapper">
+						<a href="projects.html">Projects</a>
+					</div>
+				</div>
+
+				<div class="right-side">
+					<div class="brand">
+						<a href="contact.html" style="text-decoration: none; color: white;">SCHUYLER RYAN</a>
+					</div>
+				</div>
+
+			</div>
+
+
+			<div class="home-wrapper">
+
+				<div class="home-picture">
+					<img src="images/portrait2Trans.png" />
+				</div>
+
+				<div class="home-projects-wrapper">
+					<button type="button" class="collapsible">Explore My Work</button>
+					<div class="collapsible-content">
+						<!--NASA Banner-->
+						<div class="project-banner">
+							<a href="projects.html" style="text-decoration: none; color: forestgreen;">NASA RASC-AL Special Edition 2021 Moon to Mars Ice and Prospecting Challenge</a>
+						</div>
+						<!--SUMO Bot Banner-->
+						<div class="project-banner">
+							<a href="projects.html#SUMOBot-project" style="text-decoration: none; color: white;">Cal Poly Mechatronics Student SUMO Bot Competition</a>
+						</div>					
+						<!--AI Banner-->
+						<div class="project-banner">
+							<a href="projects.html#AI-project" style="text-decoration: none; color: forestgreen;">Artificial Intelligence Project Gallery</a>
+						</div>
+						<!--Systems Banner-->
+						<div class="project-banner">
+							<a href="projects.html#systems-project" style="text-decoration: none; color: white;">Systems Programming Project Gallery</a>
+						</div>
+						<!--Roborodentia-->
+						<div class="project-banner">
+							<a href="projects.html#roborodentia-project" style="text-decoration: none; color: forestgreen;">Cal Poly Roborodentia Student Competition</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="home-signature">
+					<div class="home-signature-name">
+						Schuyler Ryan
+					</div>
+					<div class="home-signature-school">
+						Cal Poly Mechanical Engineering
+					</div>
+					<div class="home-signature-skills">
+						Mechatronics. Computer Science. Robotics. Controls.
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+	<script>
+		var coll = document.getElementsByClassName("collapsible");
+		var i;
+
+		for (i = 0; i < coll.length; i++) {
+			coll[i].addEventListener("click", function () {
+				this.classList.toggle("active");
+				var content = this.nextElementSibling;
+				if (content.style.display === "block") {
+					content.style.display = "none";
+				} else {
+					content.style.display = "block";
+				}
+			});
+		}
+	</script>
+	<footer id="footer">
+		<h3>Thanks for visiting my site!</h3>
+		<div class="footer-col1">
+			<h4>Connect with me:</h4>
+			<a href="https://www.linkedin.com/in/schuyler-ryan-07632a190" target="_blank" rel="noopener noreferrer">
+				<img src="images/linkedin.png">
+			</a>
+			<a href="contact.html">
+				<img src="images/email.svg">
+			</a>
+		</div>
+		<div class="footer-col2">
+			<p>
+				I made this website from scratch to showcase my schoolwork and projects. A résumé is nice, but there's so much more to share! Thank you for taking the time to check it out. <br /><br />
+				If you haven't already, check out the <a href="projects.html">Projects</a> tab!
+			</p>
+		</div>
+	</footer>
+</body>
+
+
+</html>
