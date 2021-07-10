@@ -51,6 +51,7 @@
 				<div class="moonToMars-wrapper">
 
 					<h1>NASA RASC-AL Special Edition: Moon to Mars Ice and Prospecting Challenge</h1>
+					<h2>National Finalists</h2>
 					<h4>Cal Poly and nine other qualifying universities will face off in September 2021 at the Langley Research Center. Designs will be reviewed by a panel of judges and teams will be scored based on how well they meet the design constraints and how effectively they accomplish the competition tasks.</h4>
 
 					<div class="moonToMars-links">
@@ -611,6 +612,19 @@
 							<div class="collapsible-content">
 								<h2>Description</h2>
 								<p>
+									This project is a simple implementation of a C shell on the command line. It works with any command line argument that can run via the exec family of system calls. It can handle redirection from and to files as well as piping of up to 20 commands. Each command can have up to 10 arguments. There is, however, a constraint on the maximum command line size imposed by UNIX of 1024 characters. The shell can handle more data than can fit into a single pipe without loss. Additionally, the redirection can come either before or after the command. <br /><br />
+									The C shell comes with extensive and thorough error checking and reporting including for unknown file names, unknown commands, incorrect number of arguments, and invalid pipes. A built-in command “exit” is included to terminate the shell as well as an EOF.
+								</p>
+								<img src="images/cShellDemo1.jpg" />
+								<p>
+									<strong>Example 1.</strong> This demonstration shows the use of the command line C shell with several commands that take at least 1 argument. It also demonstrates some of the error hndling and the built-in exit command.
+								</p>
+								<img src="images/cShellDemo2.jpg" />
+								<p>
+									<strong>Example 2.</strong> This example shows the use of piping as well as the invalid pipe command. In this case, the shell was exited by pressing Ctrl-D.
+								</p>
+								<h2>Reflections</h2>
+								<p>
 									Sample Text.
 								</p>
 							</div>
@@ -620,7 +634,33 @@
 							<div class="collapsible-content">
 								<h2>Description</h2>
 								<p>
-									Sample Text.
+									This is a compression program that accepts a file and outputs a compressed version of the file. It utilizes the LZW compression algorithm that works without the need to keep a dictionary for the decompression process. The process is extremely memory efficient because of a technique called <strong>bit shifting</strong> in which characters or codes that generally occupy 16 bits of memory are squeezed together in a way that only keeps the important identifying information. This is how compression works to reduce the size of data. In addition, this program utilizes another technique in compression referred to as <strong>recycling</strong>.
+								</p>
+								<h3>Recycling</h3>
+								<p>
+									A recycling factor is set by the user to tell the compression program at which point to stop encoding the data with unique codes and start over again. It is essentially “throwing away the dictionary” and beginning again from scratch. Because the decompression algorithm functions identically to the compression algorithm, there will be no data lost by throwing away the dictionary as it will always occur at the same repeatable and predictable spot in the input file every time. <br> <br>
+									Recycling the dictionary like this enables the program to process a file of any length, which is especially important because in general the files that need compression the most are very large. <br><br>
+									The recycling factor must be known by the decompression program in order to properly decompress, so the value is prepended as an uncompressed 8 bit number to the output file.
+								</p>
+								<h3>LZW Compression</h3>
+								<p>
+									Lempel-Ziv-Welch (LZW) is a <strong>lossless</strong> compression algorithm that finds use in the GIF image format. A compression algorithm is lossless if it can be perfectly reconstructed from the compressed data. This is usually optimal, and algorithms that are not lossless have to make up for it with better compression rates. The LZW encoding process is as follows: <br><br>
+									1. &nbsp;An empty dictionary is initialized and the program begins reading characters from the input file. <br>
+									2. &nbsp;As a character is encountered that is not in the dictionary yet, it is added and assigned a <strong>code</strong> which is represented by a 9-bit binary number. <br>
+									3. &nbsp;The program then starts a new character sequence beginning with the last character it left off on. <br>
+									4. &nbsp;It continues to append a character at a time to the sequence until encountering a sequence that does not yet exist in the dictionary. When it finds one, it adds it and assigns it a code. <br>
+									5. &nbsp;This process repeats until there are enough dictionary entries that the codes must become 10-bit length and higher. <br><br>
+									This is where the recycling factor comes into play. If the recycling factor is set to 11, then once the codes reach 11-bit length, the dictionary is thrown out and the codes start over.
+								</p>
+								<h3>Data Structure</h3>
+								<p>
+									The primary data structure for this project was an array-based Trie. A Trie is a search tree that excels in lookups for keys that are sequences (like strings of characters in an input file). It is memory efficient to use an array-based Trie instead of a linked list because storing an unsigned short that represents an array index is less memory overhead than storing a pointer. A scenario that highlights the excellent savings that an array-based Trie enables is to consider an image file being compressed (very common). A portion of an image that is mostly just a single color would have a huge amount of repeating data. If every sequence of characters entered into the dictionary was stored in a node, you would need a node each for the sequences “A”, “AA”, “AAA”, “AAAA”, and so on. In this small example, the character “A” is stored 9 times. In a Trie, a single “A” is stored in each array position, and so “A” is only stored 4 times. These savings increase exponentially with the size of strings. <br><br>
+									Another note to consider is that whenever a dictionary is thrown out and the codes restart, these character stores are no longer available. This is mitigated because in general certain regions of an image share similar sequences of data as compared to other regions in the same image. This locality of similar data lessens the impact of starting a dictionary anew because the sequences that were stored are not as useful anymore.
+
+								</p>
+								<h2>Reflections</h2>
+								<p>
+									This project was great fun. It was cool to see the real application of it, especially when I learned that the GIF format, which is used extremely often in a wide variety of contexts, uses this same algorithm. There were three main parts to the project: Creating the Trie data structure to store codes, encoding the input file with the LZW algorithm, and bit shifting the entries. The bit shifting is arguably the most important, and also posed the greatest conceptual challenge because it is difficult to verify your work when the outputs are unprintable and unrecognizable characters.
 								</p>
 							</div>
 
@@ -629,7 +669,23 @@
 							<div class="collapsible-content">
 								<h2>Description</h2>
 								<p>
-									Sample Text.
+									This simulator supports multiple CPU scheduling algorithms and computes the turnaround and wait times for each job submitted to it. The simulator runs with a specifically formatted input file containing information about the runtime and arrival time of a list of jobs. Jobs are assigned a number according to their arrival time; i.e. the job that arrives first receives job number 0, and the next receives job number 1. Based on the specified scheduling algorithm, the simulator makes the correct scheduling decisions and tracks the statistics necessary for computing the turnaround and wait times. Outputted is a list of job numbers with their corresponding turnaround and wait times as well as the average. This can be used to compare the effectiveness of each scheduling algorithm. <br><br>
+								</p>
+								<h3>Command Line Arguments</h3>
+								<p>
+									The scheduling algorithms that are supported by this simulator are round-robin (RR), first-in-first-out (FIFO), and shortest-remaining task next (SRTN). The default is FIFO, but others can be specified as an argument following a “-p” flag. In addition, a “-q” flag is utilized to set a <strong>quantum</strong> that represents the number of time units each process gets at a time during the round-robin scheduling algorithm. This value is not utilized in the other algorithms, and so it is optional to specify. The default value is 1 time unit.
+								</p>
+								<img src="images/systemsSchedSim1.jpg" />
+								<p>
+									<strong>Example 1.</strong> This demonstration shows the use of the round-robin (RR) scheduling algorithm with a time quantum of 3 time units.
+								</p>
+								<img src="images/systemsSchedSim2.jpg" />
+								<p>
+									<strong>Example 2.</strong> This example shows the simulator using the shortest remaining task next (SRTN) scheduling algorithm. This is the optimal algorithm to use for reducing turnaround and wait times.
+								</p>
+								<h2>Reflections</h2>
+								<p>
+									This project proved helpful for trying different job values to see which scheduling algorithms were most effective with jobs of different lengths and arrival times. It reminded me of one of those calculator tools you would find on the internet for certain applications. If you need to calculate a difficult integral, you can find an integral calculator online. If you need to know the average, max, minimum, or median wait time or turnaround time for a collection of processes, you can use the Scheduling Simulator. This project had 2 main components: Parsing the command line and interpreting the input arguments as choices for the simulator, and computing time values with each different algorithm. There is no shortcut for computing these values, each algorithm implemented needs to be hard coded and accurately planned in advance to give mathematically correct results.
 								</p>
 							</div>
 
@@ -644,7 +700,7 @@
 								Cal Poly Roborodentia Student Competition
 							</h1>
 						</a>
-						
+						<h2>Coming Soon!</h2>
 					</div>
 
 				</div>
