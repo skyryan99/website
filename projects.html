@@ -272,18 +272,18 @@
 							<p>
 								Local search algorithms often employ a strategy of creating many candidate solutions to a problem and exploring the states around the best one. While this approach can be effective for simple problems, global optima may not be found unless the number of states being explored is intractably high. Genetic algorithms improve on these algorithms by using more sophisticated methods for selecting individual states and using their components to create more diverse populations in subsequent generations. The Genetic algorithm runs as follows:<br /><br />
 
-								1.&ensp;Initializes a population of a specified size of random programs, or sequences, of specified length.<br />
-								2.&ensp;Scores all programs according to the fitness function specified below.<br />
-								3.&ensp;Selects a pair of programs in the top specified N percentile weighted by score using the random library in python.<br />
-								4.&ensp;Uses crossover as detailed below to create two new programs with the following restrictions:<br />
+								&emsp;1.&ensp;Initializes a population of a specified size of random programs, or sequences, of specified length.<br />
+								&emsp;2.&ensp;Scores all programs according to the fitness function specified below.<br />
+								&emsp;3.&ensp;Selects a pair of programs in the top specified N percentile weighted by score using the random library in python.<br />
+								&emsp;4.&ensp;Uses crossover as detailed below to create two new programs with the following restrictions:<br />
 
-								&emsp;+ If a loop exists, the crossover point should be to the left of both programs' "[" command<br />
-								&emsp;+ If a loop exists, the crossover point should be to the right of both programs' "]" command<br />
-								&emsp;+ If a loop exists, the crossover point should be within the loop of both programs<br />
+								&emsp;&emsp;- If a loop exists, the crossover point should be to the left of both programs' "[" command<br />
+								&emsp;&emsp;- If a loop exists, the crossover point should be to the right of both programs' "]" command<br />
+								&emsp;&emsp;- If a loop exists, the crossover point should be within the loop of both programs<br />
 
-								5.&ensp;Randomly mutates more elements in each of the new programs using: addition, deletion, or editing of commands.<br />
-								6.&ensp;Adds new programs to the next generation and repeats steps 3 - 5 until the next generation is the size of the previous generation.<br />
-								7.&ensp;Repeats entire process from step 2 until a correct output is found.<br />
+								&emsp;5.&ensp;Randomly mutates more elements in each of the new programs using: addition, deletion, or editing of commands.<br />
+								&emsp;6.&ensp;Adds new programs to the next generation and repeats steps 3 - 5 until the next generation is the size of the previous generation.<br />
+								&emsp;7.&ensp;Repeats entire process from step 2 until a correct output is found.<br />
 							</p>
 							<h4>Fitness Function</h4>
 							<p>
@@ -645,11 +645,11 @@
 								<h3>LZW Compression</h3>
 								<p>
 									Lempel-Ziv-Welch (LZW) is a <strong>lossless</strong> compression algorithm that finds use in the GIF image format. A compression algorithm is lossless if it can be perfectly reconstructed from the compressed data. This is usually optimal, and algorithms that are not lossless have to make up for it with better compression rates. The LZW encoding process is as follows: <br><br>
-									1. &nbsp;An empty dictionary is initialized and the program begins reading characters from the input file. <br>
-									2. &nbsp;As a character is encountered that is not in the dictionary yet, it is added and assigned a <strong>code</strong> which is represented by a 9-bit binary number. <br>
-									3. &nbsp;The program then starts a new character sequence beginning with the last character it left off on. <br>
-									4. &nbsp;It continues to append a character at a time to the sequence until encountering a sequence that does not yet exist in the dictionary. When it finds one, it adds it and assigns it a code. <br>
-									5. &nbsp;This process repeats until there are enough dictionary entries that the codes must become 10-bit length and higher. <br><br>
+									&emsp;1. &nbsp;An empty dictionary is initialized and the program begins reading characters from the input file. <br>
+									&emsp;2. &nbsp;As a character is encountered that is not in the dictionary yet, it is added and assigned a <strong>code</strong> which is represented by a 9-bit binary number. <br>
+									&emsp;3. &nbsp;The program then starts a new character sequence beginning with the last character it left off on. <br>
+									&emsp;4. &nbsp;It continues to append a character at a time to the sequence until encountering a sequence that does not yet exist in the dictionary. When it finds one, it adds it and assigns it a code. <br>
+									&emsp;5. &nbsp;This process repeats until there are enough dictionary entries that the codes must become 10-bit length and higher. <br><br>
 									This is where the recycling factor comes into play. If the recycling factor is set to 11, then once the codes reach 11-bit length, the dictionary is thrown out and the codes start over.
 								</p>
 								<h3>Data Structure</h3>
@@ -700,7 +700,59 @@
 								Cal Poly Roborodentia Student Competition
 							</h1>
 						</a>
-						<h2>Coming Soon!</h2>
+						<div class="roborodentia-info-description">
+							<h2>Description</h2>
+							<p>
+								The Cal Poly 2018 Roborodentia Competition was a head-to-head double elimination tournament where the object is to build an autonomous robot to fire Nerf Rival Balls into targets for points. The robots had strict specifications which will be explored in the next section. The robots competed on an 8’ x 8’ course with 4” high walls surrounding the edges and along the center. Black lines made from electrical tape were laid out along the field to facilitate the use of line-tracking sensors. The center of the game field was a raised platform with a 12” wide ramp on either side to incentivise a solution to having sufficient torque and friction to traverse it. <br><br>
+
+								Four targets made from pvc pipe and corner joints were located on the back wall of each side of the game field. Scoring with these targets and an additional <em>dump zone</em> is discussed in another section. In addition to the targets, two supply tubes were on each side of the arena where the robot could go to refill its supply of balls.
+							</p>
+							<img src="images/roborodentiaGameField.jpg" />
+							<p>
+								<strong>Figure 1.</strong> This is a CAD model of the game field showing the PVC targets and supply tubes as well as the black lines and raised platform.
+							</p>
+						</div>
+						<div class="roborodentia-info-specs">
+							<h3>Robot Specifications</h3>
+							<p>
+								In addition to being fully autonomous and self-contained, robots must conform to the following specifications: <br><br>
+								&emsp;1. &nbsp;Robots must have a 12” x 14” footprint or smaller at the start of the match. At any point during the match it cannot exceed a 14” x 17” footprint. <br>
+								&emsp;2. &nbsp;The maximum height for a robot at the start of the match is 14”, but there is no restriction after the start of the match. <br>
+								&emsp;3. &nbsp;Robots cannot disassemble into multiple parts. <br>
+								&emsp;4. &nbsp;Robots cannot damage the course, balls, or targets. They cannot intentionally jam an opponent's sensors or impede the operation of an opponent’s robot. <br>
+								&emsp;5. &nbsp;Balls may not be modified or have residue on them after being picked up. <br>
+								&emsp;6. &nbsp;Shooting mechanisms must limit balls to be shot at less than 50 feet per second. <br>
+								&emsp;7. &nbsp;A robot may not be airborne or deflect opponent shots. <br><br>
+								If a robot does not comply with any of these rules, it would be disqualified from the tournament.
+							</p>
+						</div>
+						<div class="roborodentia-info-details">
+							<h3>Match Details and Scoring</h3>
+							<p>
+								A team is assigned to each side of the game field and must start their robots on the tape intersection marked on the ground. Matches last three minutes, but can be ended early if both teams agree. Teams can pick up and restart their robot during the match, but in return an increasingly large bonus is given to the opposing team for each restart. Other than a single press of a button at the start or during a restart, robots must otherwise not be touched or controlled during the match. The robot that scores the most points in the allotted time wins the match. <br><br>
+								Each target is given a different point value, with targets A, B, C, and D being worth 1, 2, 3 and 4 points respectively. The values are known prior to the match to give teams options when it comes to maximizing score. However, for each set of balls (a ball scored in each of the 4 targets), an additional 10 points is awarded. Teams can also be rewarded for half-sets from targets {A, B} and are worth 5 points. The <em>dump zone</em> mentioned before can be a quick, though inefficient, way of scoring points as well. Each ball in the dump zone is worth 0.5 points. <br><br>
+								Penalties are given to robots for a variety of offenses. If a robot breaks anything, its score is multiplied by 0.5. If it attempts to damage an opponent's bot, does not move for the first 20 seconds, or a robot exceeds the size restrictions during a match, it is disqualified. If both bots stop traveling for 30 seconds at any time, the match ends.
+							</p>
+						</div>
+						<div class="roborodentia-images">
+							<div class="roborodentia-images-left">
+								<img src="images/roborodentiaProfile.jpg" />
+							</div>
+							<div class="roborodentia-images-right">
+								<img src="images/roborodentiaRatNest.jpg" />
+							</div>
+						</div>
+						<div class="roborodentia-info-reflections">
+							<h2>Reflections</h2>
+							<p>
+								We placed in the middle of the bracket for this tournament - 5th place. We used a trough made from foam board to funnel balls from the collection tubes into our launching mechanism. We launched the balls similar to how a pitching machine works. Two rubber rollers connected to powerful motors revolved in opposing directions to shoot the balls as they were loaded into the launching chamber. Our frame was made from perforated aluminum to balance structural integrity with weight savings. We used 4 motors to control 4 omni-directional wheels made from diagonal rolling cylinders. 6 line sensors were used to track the black lines laid out on the game field. A PID controller was implemented for the motors. <br><br>
+
+								Our strategy revolved around a behavioural loop of: Shooting all loaded balls for a short in a fixed location, moving to a new location to shoot the next round of balls into the next target, refilling with balls at the supply tubes, and repeating the process for the next two targets. Mathematically, getting full sets is the best way to maximize points so long as you can program the functionality into the bot successfully. <br><br>
+
+								Our robot was controlled with a raspberry pi and written primarily in C and C++. Unlike my other projects, I was not the primary programmer. I was involved with the design direction, part selection, and electrical work. I worked on a team with a Computer Engineer, Software Engineer, and another Mechanical Engineer. This project served as a foundation that furthered my interest in robotics and autonomous systems. I worked on this project while I was a second year student, which was before I had any Mechatronics or Computer Science curriculum.
+
+							</p>
+						</div>
 					</div>
 
 				</div>
