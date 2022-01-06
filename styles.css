@@ -5,6 +5,7 @@ body {
 	position: relative;
 	min-height: 1100px;
 	margin: 0px;
+	padding: 0px;
 	font-family: 'Lato', sans-serif;
 	color: white;
 	opacity: 1.00;
@@ -14,6 +15,7 @@ body {
 	background-image: url("images/background.jpg");
 	background-size: cover;
 }
+
 .container {
 	display: grid;
 	grid-template-columns: 1fr;
@@ -158,13 +160,13 @@ footer {
 .resume-download {
 	display: flex;
 	justify-content: center;
-	padding-left: 20px;
 }
 
 .resume-preview {
 	display: flex;
 	justify-content: center;
-	padding: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 /*conact page styles*/
@@ -370,6 +372,32 @@ tr:nth-child(even) {
 	padding-right: 10px;
 	padding-bottom: 10px;
 }
+
+/*projects - roborodentia*/
+.roborodentia-info-description, .roborodentia-info-specs, .roborodentia-info-details, .roborodentia-info-reflections {
+	border: 1px solid white;
+	background: rgba(204, 204, 204, 0.3);
+	margin-bottom: 5px;
+	margin-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 18px;
+}
+
+.roborodentia-images-left img {
+	width: 34%;
+	height: auto;
+	float: left;
+	padding: 1px;
+}
+
+.roborodentia-images-right img {
+	width: 65%;
+	height: auto;
+	padding: 1px;
+	padding-bottom: 5px;
+}
+
 
 /*home page styles*/
 .home-picture img {

@@ -1,0 +1,34 @@
+Who's my audience?
+    1. Prospective Employers
+    2. Myself
+
+What is important to prospective employers?
+    - Show off projects
+    - Information about myself, my resume, coursework, past work experience
+    - A way to reach out to me or contact me
+
+#Features
+    1. Show off projects
+    2. About Me
+    3. Shows resume
+    4. Credentials/education and coursework
+    5. Work Experience
+    6. "Home" page for easy navigation
+    7. Contact me
+    8. "Me" page that I can use for my own purposes
+
+How to Show off projects:
+
+	Home page:
+	    + Have several image blocks with:
+		- Title of project
+		- Brief description of project
+		- Picture relevant to project
+		- Learning outcome maybe?
+		- ***Button (maybe whole picture) that takes you to corresponding portion of the projects page***
+	    + CSS to have image slide away and reveal text in block underneath (black or green background)
+
+	Projects page:
+	    + Have one long, scroll-down page with all projects
+	    + Order them from most ---> least impressive or significant
+	    + Include external links (GitHub, picture gallery, YouTube video, Project pages, project reports)

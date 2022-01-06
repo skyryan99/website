@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+     <base href="http://127.0.0.1:5000/resume/"/>
+     <title>Résumé - {{ student_name }}</title>
+
+     <style type="text/css">
+        * { margin: 0; padding: 0; }
+        body { font: 16px Helvetica, Sans-Serif; line-height: 24px; background-image: url("images/resume_background.jpg"); }
+        .clear { clear: both; }
+        #page-wrap { width: 800px; margin: 40px auto 60px; }
+        #pic { float: right; margin: -30px 0 0 0; width: 200px; height: 200px;}
+        h1 { margin: 0 0 16px 0; padding: 0 0 16px 0; font-size: 42px; font-weight: bold; letter-spacing: -2px; border-bottom: 1px solid #999; width: 75%; }
+        h2 { font-size: 20px; margin: 0 0 6px 0; position: relative; }
+        h2 span { position: absolute; bottom: 0; right: 0; font-style: italic; font-family: Georgia, Serif; font-size: 16px; color: #999; font-weight: normal; }
+        p { margin: 0 0 16px 0; position: relative; }
+        p span { position: absolute; top: 0; right: 0; font-style: italic; font-family: Georgia, Serif; font-size: 16px; color: #999; font-weight: normal; }
+        a { color: #999; text-decoration: none; border-bottom: 1px dotted #999; }
+        a:hover { border-bottom-style: solid; color: black; }
+        ul { margin: 0 0 32px 17px; }
+        #objective { width: 500px; float: left; }
+        #objective p { font-family: Georgia, Serif; font-style: italic; color: #666; }
+        dt { font-style: italic; font-weight: bold; font-size: 18px; text-align: right; padding: 0 26px 0 0; width: 150px; float: left; height: 100px; border-right: 1px solid #999;  }
+        dd { width: 600px; float: right; }
+        dd.clear { float: none; margin: 0; height: 15px; }
+     </style>
+</head>
+
+<body>
+
+    <div id="page-wrap">
+    
+        <img src="images/cal_poly_seal.png" alt="Photo" id="pic" />
+    
+        <div id="contact-info" class="vcard">
+        
+            <!-- Microformats! -->
+        
+            <h1 class="fn">{{ student_name }}</h1>
+        
+            <p>
+                Cell: {{ cell_number }} <br />
+                Email: <a class="email" href="mailto:{{ student_email }}@calpoly.edu">{{ student_email }}@calpoly.edu</a>
+            </p>
+        </div>
+                
+        <div id="objective">
+            <p>
+                {{ student_bio }}
+            </p>
+        </div>
+        
+        <div class="clear"></div>
+        
+        <dl>
+            <dd class="clear"></dd>
+
+            <dt>Education and Skills</dt>
+            <dd>
+                <h2>California Polytechnic State University, San Luis Obispo</h2>
+                <p>
+                    <strong>Major:</strong> Computer Science<span> {{ grad_year }}</span><br />
+                    <strong>GPA:</strong> {{ student_gpa }}
+                </p>
+
+                <h2>Coursework</h2>
+                <p>{{ student_courses }}</p>
+
+                <h2>Character Traits</h2>
+                <p>{{ student_traits }}</p>
+            </dd>
+
+            <dd class="clear"></dd>
+
+            <dt>Work Experience</dt>
+            <dd>
+
+                <h2>{{ internship_1 }} <span>{{ title_1 }} - {{ location_1 }} {{ timeframe_1 }}</span></h2>
+                <ul>
+                    <li>{{ i_bullet_1_1 }}</li>
+                    <li>{{ i_bullet_1_2 }}</li>
+                    <li>{{ i_bullet_1_3 }}</li>
+                </ul>
+
+                <h2>{{ internship_2 }} <span>{{ title_2 }} - {{ location_2 }} {{ timeframe_2 }}</span></h2>
+                <ul>
+                    <li>{{ i_bullet_2_1 }}</li>
+                    <li>{{ i_bullet_2_2 }}</li>
+                    <li>{{ i_bullet_2_3 }}</li>
+                </ul>
+            </dd>
+
+            <dd class="clear"></dd>
+
+            <dt>Projects</dt>
+            <dd>
+                <h2>{{ project_1 }} </h2>
+                <ul>
+                    <li>{{ p_bullet_1_1 }}</li>
+                    <li>{{ p_bullet_1_2 }}</li>
+                    <li>{{ p_bullet_1_3 }}</li>
+                </ul>
+
+                <h2>{{ project_2 }} </h2>
+                <ul>
+                    <li>{{ p_bullet_2_1 }}</li>
+                    <li>{{ p_bullet_2_2 }}</li>
+                    <li>{{ p_bullet_2_3 }}</li>
+                </ul>
+            </dd>
+        </dl>
+    </div>
+
+</body>
+
+</html>

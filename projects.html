@@ -4,11 +4,12 @@
 
 <head>
 
-    <meta charset="utf-8" />
-    <title>SR | Charles Darwin Fan Page</title>
+	<meta charset="utf-8" />
+	<title>SR | Charles Darwin Fan Page</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="styles.css">
+	<link rel="shortcut icon" type="image/x-icon" href="images/portrait.jpg">
 
 </head>
 
@@ -52,7 +53,8 @@
 
 					<h1>NASA RASC-AL Special Edition: Moon to Mars Ice and Prospecting Challenge</h1>
 					<h2>National Finalists</h2>
-					<h4>Cal Poly and nine other qualifying universities will face off in September 2021 at the Langley Research Center. Designs will be reviewed by a panel of judges and teams will be scored based on how well they meet the design constraints and how effectively they accomplish the competition tasks.</h4>
+					<h4>Cal Poly and nine other qualifying universities faced off in September 2021 at the hampton Convention Center in Virginia. Designs were reviewed by a panel of judges and teams were scored based on how well they met the design constraints and how effectively they accomplished the competition tasks.</h4>
+					<h4>Cal Poly won the award for the most accurate digital core, meaning our system yielded the soil density profile that most closely matched reality.</h4>
 
 					<div class="moonToMars-links">
 						<a href="https://www.nasa.gov/solve/nasas-lunar-loo-challenge/Moon_to_Mars_Ice_Prospecting_Challenge/" class="button" target="_blank" rel="noopener noreferrer">Challenge Description</a>
@@ -91,7 +93,6 @@
 								To visualize the requirements, the team created a list of customer needs, a House of Quality diagram, and an engineering specifications table. Additionally, the STYX & STONES team discussed the design process they plan to follow including major project milestones. Specifically, the team plans to excel in collecting more than five quarts of water autonomously while successfully identifying the overburden layers – tasks that previous teams have struggled with.
 								The team’s design direction includes two main components: a masonry drill bit and an auger-heater probe hybrid tool. The masonry drill bit creates a hole in the overburden using the force from a rotary hammer. The heater probe tool then moves to align with the hole and be driven into the loosened overburden using the force of a small gear motor. The heater probe then melts ice using a hot waterjet and delivers water to a resevoir tank via a peristaltic pump and a two-stage filtration system.<br /><br />
 								To verify the design, the team completed a multitude of analyses and tests for each subsystem and the prototype as a whole. Through drilling tests, the team found that the rotary hammer and masonry bit can easily cut through all overburden layers while keeping weight on bit (WOB) below 150N. Similarly, the load cells attached to the drill carriage were tested and proven to be accurate at recording WOB data and providing feedback to the drill controller. Furthermore, the load cells proved successful at recording accurate WOB data that can be analyzed to determine overburden composition. The pumping system was also tested and was capable of effectively moving water through all filters and delivering fluid to the waterjet. More tests were completed to verify the heater probe tool; these tests included controlling heater temperature, melting ice, expelling water through the waterjet, and removing loose material from the hole.<br /><br />
-								To verify the design requirements, the team has completed analysis pertaining to each subsystem including the drill, heater probe, frame, and control systems. The team is confident in the drilling design based on testing and vibrations analysis. In the same manner, the team verified that the 12V peristaltic pump will have enough pressure head rise based on analysis and prototype testing. Using the prototype heater probe as a reference, the team fully characterized the heat transfer parameters of the final design and is confident the auger will be effective considering surrounding debris. Finally, the team tested the water jet design using 120ºF water which provided optimistic results that the water jet will significantly expand the melt radius per hole.<br /><br />
 							</p>
 						</div>
 
@@ -112,7 +113,7 @@
 								and
 								<a href="https://www.youtube.com/watch?v=0jcwg5Ck8jE" target="_blank" rel="noopener noreferrer">Video.</a><br /><br />
 
-								From March and ongoing until Fall 2021, the team continued manufacturing, assembling, and writing code for the project. The first full-system test was completed in June 2021 before the team members split up for Summer vacation.<br /><br />
+								From March until September 2021, the team continued manufacturing, assembling, and writing code for the project. The first full-system test was completed in June 2021 before the team members split up for Summer vacation. The first <em>successful</em> full system test was completed in Semptember 2021, a few weeks prior to the competition.<br /><br />
 							</p>
 						</div>
 
@@ -756,27 +757,63 @@
 					</div>
 
 				</div>
+				<div class="NLP-wrapper">
+					<a id="NLP-project">
+						<h1>
+							Natural Language Processing Project Gallery
+						</h1>
+						<p>
+							<strong><a href="contact.html">Contact me</a> for access to the full GitHub Repository! Kept private at the request of the University.</strong>
+						</p>
+						<div class="NLP-info=summary">
+							<h3>Summary</h3>
+							<p>
+								This is a collection of Natural Language Processing projects I have completed in python. An extensive description is included below of how each project works, the background knowledge needed to understand them, and the reflections I have made with each one. Source code is available to run and test in the GitHub respository.
+							</p>
+						</div>
+
+						<!--Generate Resumes for Artificial CSC Students-->
+						<button type="button" class="collapsible">Artificial CSC Student Résumé Generator</button>
+
+						<div class="collapsible-content">
+							<h2>Description</h2>
+							<p>
+								Press the button below to generate an artificial resume for a fake computer science student at Cal Poly! <br><br>
+							</p>
+
+							<div class="generate-resume-button">
+
+								<a href="http://127.0.0.1:5000/" class="button" target="_blank" rel="noopener noreferrer">Generate Résumé!</a>
+
+							</div>
+							<br />
+						</div>
+					</a>
+				</div>
+				<br />
 
 			</div>
-		</div>
-		<!--JS for collapsible items in AI/systems-gallery-->
-		<script>
-			var coll = document.getElementsByClassName("collapsible");
-			var i;
 
-			for (i = 0; i < coll.length; i++) {
-				coll[i].addEventListener("click", function () {
-					this.classList.toggle("active");
-					var content = this.nextElementSibling;
-					if (content.style.display === "block") {
-						content.style.display = "none";
-					} else {
-						content.style.display = "block";
-					}
-				});
-			}
-		</script>
+		</div>
 	</div>
+	<!--JS for collapsible items in AI/systems-gallery-->
+	<script>
+		var coll = document.getElementsByClassName("collapsible");
+		var i;
+
+		for (i = 0; i < coll.length; i++) {
+			coll[i].addEventListener("click", function () {
+				this.classList.toggle("active");
+				var content = this.nextElementSibling;
+				if (content.style.display === "block") {
+					content.style.display = "none";
+				} else {
+					content.style.display = "block";
+				}
+			});
+		}
+	</script>
+
 	<footer id="footer">
 		<h3>Thanks for visiting my site!</h3>
 		<div class="footer-col1">
