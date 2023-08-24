@@ -3,7 +3,7 @@
 /*main styles */
 body {
 	position: relative;
-	min-height: 1100px;
+	min-height: 100vh;
 	margin: 0px;
 	padding: 0px;
 	font-family: 'Lato', sans-serif;
@@ -37,12 +37,11 @@ a {
 }
 
 a:visited {
-	color: mediumpurple;
+	color: deepskyblue;
 }
 
 #page-container {
-	position: relative;
-	min-height: 100vh;
+	height: 100%;
 }
 
 #footer {
@@ -409,7 +408,7 @@ tr:nth-child(even) {
 	position: absolute;
 	bottom: 0px;
 	right: 0px;
-	max-height: 900px;
+	height: 95vh;
 	width: auto;
 }
 
